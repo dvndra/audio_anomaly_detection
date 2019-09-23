@@ -1,0 +1,23 @@
+net: "/home/axis-inside/Downloads/caffe-0.15.13/examples/anomaly_40ms_same_bkgd_pic_3features/anomaly_detection_train.prototxt"
+# For a test instance, test_iter batches are processed by network and an average accuracy over those is computed by solver
+# test_iter*test_batch_size = no. of test samples processed
+test_iter: 200
+# Carry out a test instance every 1000 training iterations where 1 iteration equals 1 training batch processing
+test_interval: 1
+test_compute_loss: true
+base_lr: 0.01
+lr_policy: "step"
+gamma: 0.1
+stepsize: 100000
+# Display training loss after every 10000 iterations #
+display: 1
+# max_iter refers to # of training batches/ iterations used in training phase
+max_iter: 350000
+weight_decay: 0.00005
+snapshot: 10
+snapshot_prefix: "/home/axis-inside/Downloads/caffe-0.15.13/examples/anomaly_40ms_same_bkgd_pic_3features/trained_model"
+momentum: 0.9
+# solver mode: CPU or GPU
+solver_mode: GPU
+# Type of back_propagation algorithm
+#type: 'SGD'
